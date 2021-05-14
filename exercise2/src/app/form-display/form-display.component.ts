@@ -12,7 +12,10 @@ export class FormDisplayComponent implements OnInit {
   form = new FormGroup({
     default: new FormControl(''),
     email: new FormControl('', [Validators.required, Validators.email]),
-    disabled: new FormControl('Lorem ipsum dolor sit amet'),
+    disabled: new FormControl({
+      value: 'Lorem ipsum dolor sit amet',
+      disabled: true,
+    }),
     readonly: new FormControl('Lorem ipsum dolor sit amet'),
   });
   ngOnInit(): void {}
