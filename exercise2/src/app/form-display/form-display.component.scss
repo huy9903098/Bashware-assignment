@@ -60,14 +60,20 @@ $error: #f95459;
       display: flex;
     }
 
+    .mat-form-field-suffix {
+      top: -5px;
+      .mat-icon {
+        color: $input-disabled;
+      }
+    }
+
     .mat-hint {
       display: flex;
       color: $input-style;
-    }
-
-    .mat-icon {
-      width: 16px;
-      height: 16px;
+      .mat-icon {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }
