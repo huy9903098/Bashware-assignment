@@ -2,7 +2,8 @@ $input-style: #00000099;
 $input-border-normal: #0000001f;
 $input-font: #000000de;
 $input-focused: #00a9ce;
-$input-disabled: #00000061;
+$input-disabled-font: #00000061;
+$input-disabled: #0000000a;
 $error: #f95459;
 
 .mat-form-field-appearance-legacy {
@@ -19,7 +20,7 @@ $error: #f95459;
       opacity: 0;
       top: -5px;
       .mat-icon {
-        color: $input-disabled;
+        color: $input-disabled-font;
       }
     }
 
@@ -38,11 +39,11 @@ $error: #f95459;
       padding: 8px 12px;
       color: $input-font;
       &:disabled {
-        color: #00000061 !important;
-        background: #0000000a 0% 0% no-repeat padding-box;
+        color: $input-disabled-font !important;
+        background: $input-disabled 0% 0% no-repeat padding-box;
       }
       &:read-only {
-        background: #0000000a 0% 0% no-repeat padding-box;
+        background: $input-disabled 0% 0% no-repeat padding-box;
       }
       &:hover:enabled:not([readonly]) {
         border: 1px solid $input-style;
