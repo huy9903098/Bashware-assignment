@@ -1,0 +1,92 @@
+$input-style: #00000099;
+$input-border-normal: #0000001f;
+$input-font: #000000de;
+$input-focused: #00a9ce;
+$input-disabled: #00000061;
+$error: #f95459;
+
+.mat-form-field-appearance-legacy {
+  padding: auto;
+  ::ng-deep {
+    .mat-form-field-label {
+      color: $input-style;
+      transform: translateY(-1.34375em) scale(1) !important; /* originally scale(0.75) */
+      font-weight: bold;
+      height: 20px;
+    }
+    .mat-input-element {
+      border: 1px solid $input-border-normal;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border-radius: 4px;
+      height: 20px;
+      font-size: 14px;
+      padding: 8px 12px;
+      color: $input-font;
+
+      &:hover:enabled:not([readonly]) {
+        border: 1px solid $input-style;
+      }
+
+      &:disabled {
+        color: #00000061 !important;
+        background: #0000000a 0% 0% no-repeat padding-box;
+      }
+
+      &:read-only {
+        background: #0000000a 0% 0% no-repeat padding-box;
+      }
+    }
+
+    .mat-form-field-subscript-wrapper {
+      font-size: 100% !important;
+      position: static;
+    }
+
+    .mat-form-field-label-wrapper {
+      top: -20px;
+    }
+
+    .mat-form-field-infix {
+      width: 276px;
+      padding: 4px 0px;
+      border-top: 45px solid transparent;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-error {
+      display: flex;
+    }
+
+    .mat-hint {
+      display: flex;
+      color: $input-style;
+    }
+
+    .mat-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.mat-form-field-appearance-legacy.mat-focused {
+  ::ng-deep {
+    .mat-form-field-label {
+      color: $input-focused !important;
+    }
+    .mat-input-element {
+      border: 1px solid $input-focused !important;
+    }
+  }
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-invalid {
+  ::ng-deep {
+    .mat-input-element {
+      border: 1px solid $error !important;
+    }
+  }
+}

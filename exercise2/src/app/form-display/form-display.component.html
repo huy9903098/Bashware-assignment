@@ -1,0 +1,37 @@
+<p>
+  <mat-form-field floatLabel="always" appearance="legacy">
+    <mat-label>Default Form</mat-label>
+    <input matInput placeholder="Deafult with no error" />
+    <mat-hint> <mat-icon>info</mat-icon>This is a deafult form</mat-hint>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field floatLabel="always" appearance="legacy">
+    <mat-label>Form With Email Error</mat-label>
+    <input matInput placeholder="example@domain.com" [formControl]="email" />
+    <mat-error *ngIf="email.invalid"
+      ><mat-icon>info</mat-icon> {{ getErrorMessage() }}</mat-error
+    >
+    <mat-hint>
+      <mat-icon>info</mat-icon>This form contain email checking error</mat-hint
+    >
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field floatLabel="always" appearance="legacy">
+    <mat-label>Disabled Form</mat-label>
+    <input [disabled]="true" matInput value="Lorem ipsum dolor sit amet" />
+
+    <mat-hint><mat-icon>info</mat-icon>This form is disabled</mat-hint>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field floatLabel="always" appearance="legacy">
+    <mat-label>Read only Form</mat-label>
+    <input [readonly]="true" matInput value="Lorem ipsum dolor sit amet" />
+
+    <mat-hint><mat-icon>info</mat-icon>This form is read only</mat-hint>
+  </mat-form-field>
+</p>

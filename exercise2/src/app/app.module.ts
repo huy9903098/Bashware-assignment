@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CustomFormFieldComponent } from './custom-form-field/custom-form-field.component';
+import { FormDisplayComponent } from './form-display/form-display.component';
 
 @NgModule({
-  declarations: [AppComponent, CustomFormFieldComponent],
+  declarations: [AppComponent, CustomFormFieldComponent, FormDisplayComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

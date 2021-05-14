@@ -14,7 +14,7 @@ import { MatInput } from '@angular/material/input';
 import { Observable, Subject } from 'rxjs';
 
 export interface FormFieldValue {
-  text: string;
+  text: string | number;
   disable: boolean;
 }
 
@@ -62,14 +62,17 @@ export class CustomFormFieldComponent
 
   ngControl!: NgControl | null;
   focused!: boolean;
-  empty!: boolean;
+
+  get empty(): boolean {
+    return !this.value.text;
+  }
   shouldLabelFloat: boolean = true;
   required!: boolean;
+
+  @Input()
   disabled!: boolean;
-  errorState!: boolean;
-  controlType?: string | undefined;
-  autofilled?: boolean | undefined;
-  userAriaDescribedBy?: string | undefined;
+
+  errorState: boolean = false;
 
   constructor(private focusMonitor: FocusMonitor) {}
 
