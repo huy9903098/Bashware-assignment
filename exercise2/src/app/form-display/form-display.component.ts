@@ -29,7 +29,7 @@ export class FormDisplayComponent implements OnInit {
   }
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
+    if (this.email.hasError('required') || this.email.value.length === 0) {
       return 'You must enter a value';
     }
 
