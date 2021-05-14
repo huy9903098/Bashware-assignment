@@ -34,9 +34,9 @@
         (click)="email.value = ''"
         >cancel</mat-icon
       >
-      <mat-error *ngIf="email.invalid">
-        <mat-icon>info</mat-icon>{{ getErrorMessage() }}</mat-error
-      >
+      <div class="mat-error">
+        <mat-icon>info</mat-icon>{{ getErrorMessage() }}
+      </div>
       <mat-hint>
         <mat-icon>info</mat-icon>This form contain email checking
         error</mat-hint
