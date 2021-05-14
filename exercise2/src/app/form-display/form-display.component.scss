@@ -52,16 +52,24 @@ $error: #f95459;
 
     .mat-form-field-subscript-wrapper {
       font-size: 100% !important;
-    }
 
-    .mat-form-field-label-wrapper {
-      top: -20px;
+      .mat-form-field-hint-wrapper {
+        height: 17px;
+        .mat-hint {
+          display: flex;
+          color: $input-style;
+        }
+      }
     }
 
     .mat-form-field-infix {
       width: 276px;
       padding: 4px 0px;
       border-top: 45px solid transparent;
+
+      .mat-form-field-label-wrapper {
+        top: -20px;
+      }
     }
 
     .mat-form-field-underline {
@@ -70,14 +78,6 @@ $error: #f95459;
 
     .mat-error {
       display: none;
-    }
-
-    .mat-form-field-hint-wrapper {
-      height: 17px;
-      .mat-hint {
-        display: flex;
-        color: $input-style;
-      }
     }
 
     .mat-icon {
