@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-display',
@@ -8,10 +9,21 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FormDisplayComponent implements OnInit {
   constructor() {}
-
+  form = new FormGroup({
+    default: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    disabled: new FormControl('Lorem ipsum dolor sit amet'),
+    readonly: new FormControl('Lorem ipsum dolor sit amet'),
+  });
   ngOnInit(): void {}
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  get email(): any {
+    return this.form.get('email');
+  }
+
+  get default(): any {
+    return this.form.get('default');
+  }
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
