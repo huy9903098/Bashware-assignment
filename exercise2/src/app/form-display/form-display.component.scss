@@ -2,8 +2,7 @@ $input-style: #00000099;
 $input-border-normal: #0000001f;
 $input-font: #000000de;
 $input-focused: #00a9ce;
-$input-disabled-font: #00000061;
-$input-disabled: #0000000a;
+$input-disabled: #00000061;
 $error: #f95459;
 
 .mat-form-field-appearance-legacy {
@@ -38,16 +37,13 @@ $error: #f95459;
       font-size: 14px;
       padding: 8px 12px;
       color: $input-font;
-
       &:disabled {
-        color: $input-disabled-font !important;
-        background: $input-disabled 0% 0% no-repeat padding-box !important;
+        color: #00000061 !important;
+        background: #0000000a 0% 0% no-repeat padding-box;
       }
-
       &:read-only {
-        background: $input-disabled 0% 0% no-repeat padding-box !important;
+        background: #0000000a 0% 0% no-repeat padding-box;
       }
-
       &:hover:enabled:not([readonly]) {
         border: 1px solid $input-style;
       }
@@ -55,23 +51,16 @@ $error: #f95459;
 
     .mat-form-field-subscript-wrapper {
       font-size: 100% !important;
+    }
 
-      .mat-form-field-hint-wrapper {
-        height: 17px;
-        .mat-hint {
-          display: flex;
-          color: $input-style;
-        }
-      }
+    .mat-form-field-label-wrapper {
+      top: -20px;
     }
 
     .mat-form-field-infix {
       width: 276px;
       padding: 4px 0px;
       border-top: 45px solid transparent;
-      .mat-form-field-label-wrapper {
-        top: -20px;
-      }
     }
 
     .mat-form-field-underline {
@@ -80,6 +69,14 @@ $error: #f95459;
 
     .mat-error {
       display: none;
+    }
+
+    .mat-form-field-hint-wrapper {
+      height: 17px;
+      .mat-hint {
+        display: flex;
+        color: $input-style;
+      }
     }
 
     .mat-icon {
