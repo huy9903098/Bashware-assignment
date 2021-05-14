@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -25,6 +25,7 @@ export class FormDisplayComponent implements OnInit {
   }
 
   get default(): any {
+    console.log(this.form.get('disabled'));
     return this.form.get('default');
   }
 

@@ -2,7 +2,8 @@ $input-style: #00000099;
 $input-border-normal: #0000001f;
 $input-font: #000000de;
 $input-focused: #00a9ce;
-$input-disabled: #00000061;
+$input-disabled-font: #00000061;
+$input-disabled: #0000000a;
 $error: #f95459;
 
 .mat-form-field-appearance-legacy {
@@ -14,6 +15,21 @@ $error: #f95459;
       font-weight: bold;
       height: 20px;
     }
+
+    .mat-form-field-suffix {
+      opacity: 0;
+      top: -5px;
+      .mat-icon {
+        color: $input-disabled;
+      }
+    }
+
+    .mat-form-field-flex:hover {
+      .mat-form-field-suffix {
+        opacity: 1;
+      }
+    }
+
     .mat-input-element {
       border: 1px solid $input-border-normal;
       background: #ffffff 0% 0% no-repeat padding-box;
@@ -23,32 +39,39 @@ $error: #f95459;
       padding: 8px 12px;
       color: $input-font;
 
-      &:hover:enabled:not([readonly]) {
-        border: 1px solid $input-style;
-      }
-
       &:disabled {
-        color: #00000061 !important;
-        background: #0000000a 0% 0% no-repeat padding-box;
+        color: $input-disabled-font !important;
+        background: $input-disabled 0% 0% no-repeat padding-box !important;
       }
 
       &:read-only {
-        background: #0000000a 0% 0% no-repeat padding-box;
+        background: $input-disabled 0% 0% no-repeat padding-box !important;
+      }
+
+      &:hover:enabled:not([readonly]) {
+        border: 1px solid $input-style;
       }
     }
 
     .mat-form-field-subscript-wrapper {
       font-size: 100% !important;
-    }
 
-    .mat-form-field-label-wrapper {
-      top: -20px;
+      .mat-form-field-hint-wrapper {
+        height: 17px;
+        .mat-hint {
+          display: flex;
+          color: $input-style;
+        }
+      }
     }
 
     .mat-form-field-infix {
       width: 276px;
       padding: 4px 0px;
       border-top: 45px solid transparent;
+      .mat-form-field-label-wrapper {
+        top: -20px;
+      }
     }
 
     .mat-form-field-underline {
@@ -57,21 +80,6 @@ $error: #f95459;
 
     .mat-error {
       display: none;
-    }
-
-    .mat-form-field-suffix {
-      top: -5px;
-      .mat-icon {
-        color: $input-disabled;
-      }
-    }
-
-    .mat-form-field-hint-wrapper {
-      height: 17px;
-      .mat-hint {
-        display: flex;
-        color: $input-style;
-      }
     }
 
     .mat-icon {
@@ -85,6 +93,10 @@ $error: #f95459;
   ::ng-deep {
     .mat-form-field-label {
       color: $input-focused !important;
+    }
+
+    .mat-form-field-suffix {
+      opacity: 1 !important;
     }
     .mat-input-element {
       border: 1px solid $input-focused !important;
