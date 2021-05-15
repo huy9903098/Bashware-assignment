@@ -6,4 +6,4 @@ Go to folder /exercise1 in the terminal with 'cd exercise1' and run 'open ./inde
 
 # Exercise 2
 
-Go to folder /exercise2 in the terminal with 'cd exercise2' and run 'ng serve'. Then it will open the solutions at URL: 'http://localhost:4200/' on your browser
+Go to folder /exercise2 in the terminal with 'cd exercise2' and run 'ng serve -o'. Then it will open the solutions at URL: 'http://localhost:4200/' on your browser
